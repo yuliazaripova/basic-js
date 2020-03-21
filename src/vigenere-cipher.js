@@ -1,6 +1,6 @@
 class VigenereCipheringMachine {
-    constructor(reverse) {
-        this.reverse = typeof this.reverse == 'undefined' ?  true : reverse;
+    constructor(reverse = true) {
+        this.reverse = reverse;
         
     }
     encrypt(message, key) {
@@ -27,7 +27,7 @@ class VigenereCipheringMachine {
             output+= alph[index].toUpperCase();
         }
 
-        return this.reverse == true ? output : output.split('').join('');
+        return this.reverse == true ? output : output.split('').reverse().join('');
 
     }
 
@@ -55,7 +55,7 @@ class VigenereCipheringMachine {
             output+= alph[index].toUpperCase();
         }
 
-        return this.reverse == true ? output : output.split('').join('');
+        return this.reverse == true ? output : output.split('').reverse().join('');
 
     }
 }
